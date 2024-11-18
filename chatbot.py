@@ -1,3 +1,13 @@
-PS> python -m venv venv
-PS> venv\Scripts\activate
-(venv) PS> python -m pip install chatterbot==1.0.4 pytz
+# bot.py
+
+from chatterbot import ChatBot
+
+chatbot = ChatBot("Chatpot")
+
+exit_conditions = (":q", "quit", "exit")
+while True:
+    query = input("> ")
+    if query in exit_conditions:
+        break
+    else:
+        print(f"🪴 {chatbot.get_response(query)}")
